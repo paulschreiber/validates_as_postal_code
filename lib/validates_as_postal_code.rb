@@ -50,8 +50,7 @@ module ActiveRecord
     		  next unless current_regex
     		  disallowed_characters = disallowed_characters_for_country(country)
 
-  		    new_value = value.upcase.to_s.gsub(disallowed_characters, '')
-  		    new_value ||= ''
+  		    new_value = value.nil? ? "" : value.upcase.gsub(disallowed_characters, '')
 
   		    unless (configuration[:allow_blank] && new_value.blank?) || new_value =~ current_regex
   		      record.errors.add(attr_name, configuration[:message])
