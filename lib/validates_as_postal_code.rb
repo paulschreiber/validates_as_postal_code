@@ -29,7 +29,7 @@ module ActiveRecord
   		end
 
   		def validates_as_postal_code(*args)        
-  		  configuration = { :message => ActiveRecord::Errors.default_error_messages[:invalid],
+  		  configuration = { :message => I18n.translate('activerecord.errors.messages.invalid'),
   		                    :on => :save, :with => nil
   		                  }
   		  configuration.update(args.pop) if args.last.is_a?(Hash)
