@@ -1,1 +1,1 @@
-require 'validates_as_postal_code'
+require File.join(File.dirname(__FILE__), 'lib/validates_as_postal_code')
