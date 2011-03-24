@@ -29,7 +29,7 @@ module ActiveRecord
   		end
 
   		def validates_as_postal_code(*args)        
-  		  configuration = { :on => :save, :with => nil }
+  		  configuration = { :with => nil }
   		  configuration.update(args.pop) if args.last.is_a?(Hash)
 
   		  validates_each(args, configuration) do |record, attr_name, value|
